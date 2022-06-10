@@ -64,6 +64,11 @@ CREATE TABLE `em_finanse` (
 --
 
 CREATE TABLE `em_najemcy` (
+    /*na naj_id , naj_login , naj_date_creation ustawaimy indeksy po prostu
+      w gui php my admin
+     */
+  `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,
+  /*naj_id bedziemy my nadawac ale baza bedzei tez sama id robila */
   `naj_ID` int(11) NOT NULL,
   `naj_Imie` varchar(20) CHARACTER SET latin7 NOT NULL,
   `naj_Nazwisko` varchar(20) CHARACTER SET latin7 NOT NULL,
@@ -77,7 +82,11 @@ CREATE TABLE `em_najemcy` (
   `naj_MiastoKor` varchar(50) CHARACTER SET latin7 NOT NULL,
   `naj_KodPocztKor` varchar(50) CHARACTER SET latin7 NOT NULL,
   `naj_NrDowodu` varchar(50) CHARACTER SET latin7 NOT NULL,
-  `naj_Pesel` int(20) NOT NULL
+  `naj_Pesel` int(20) NOT NULL,
+  `naj_Login` varchar(20) CHARACTER SET latin7 NOT NULL,
+  `naj_Haslo` varchar(20) CHARACTER SET latin7 NOT NULL
+            /*wrzucilem login i haslo do logowania potrzebne */
+      `naj_date_creation` TIMESTAMP NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
